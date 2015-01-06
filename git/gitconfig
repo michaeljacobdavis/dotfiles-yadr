@@ -1,5 +1,10 @@
 # set your user tokens as environment variables, such as ~/.secrets
 # See the README for examples.
+[user]
+  name = Mike Davis
+  email = mike@michaeljacobdavis.com
+[credential]
+  helper = osxkeychain
 [color]
   ui = true
 [color "branch"]
@@ -58,6 +63,10 @@
   # push
   ps = push                         # push
 
+  # productivity
+  standup = log --since yesterday --author='Mike Davis' --pretty=oneline --branches=* --decorate
+  neuter = remote set-url --push upstream no_push
+
   # rebase
   rc = rebase --continue            # continue rebase
   rs = rebase --skip                # skip rebase
@@ -91,8 +100,16 @@
   svnl = svn log --oneline --show-commit
 [format]
   pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
-[mergetool]
-  prompt = false
+[merge]
+  tool = ks
+[mergetool "ks"]
+  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+  trustExitCode = true
+[mergetool "custom"]
+  cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "$PWD/$BASE" "$PWD/$REMOTE" "$PWD/$LOCAL" "$PWD/$MERGED"
+  keepTemporaries = false
+  trustExitCode = false
+  keepBackup = false
 [mergetool "mvimdiff"]
   cmd="mvim -c 'Gdiff' $MERGED"     # use fugitive.vim for 3-way merge
   keepbackup=false
@@ -119,9 +136,13 @@
   # instead of a/b/c/d as prefixes for patches
   mnemonicprefix = true
 	algorithm = patience
+[difftool "ks"]
+  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [rerere]
   # Remember my merges
   # http://gitfu.wordpress.com/2008/04/20/git-rerere-rereremember-what-you-did-last-time/
   enabled = true
 [include]
   path = .gitconfig.user
+[help]
+  autocorrect = 1

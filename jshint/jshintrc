@@ -1,0 +1,33 @@
+{
+    /* Enforce */
+    "curly": true,
+    "eqeqeq": true,
+    "forin": true,
+    "freeze": true,
+    "immed": true,
+    "indent": 4,
+    "latedef": true,
+    "maxcomplexity": 30,
+    "maxdepth": 5,
+    "newcap": true,
+    "noempty": true,
+    "nonbsp": true,
+    "quotmark": "single",
+    "strict": true,
+    "undef": true,
+    "unused": "vars",
+
+    /* Relax */
+    "expr": true,
+    "laxbreak": true,
+
+    /* Envs */
+    "node": true,
+    "browser": true,
+
+    "globals": {
+        /* RequireJS */
+        "define": false,
+        "requirejs": false
+    }
+}

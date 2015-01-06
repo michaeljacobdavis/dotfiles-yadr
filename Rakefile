@@ -14,6 +14,8 @@ task :install => [:submodule_init, :submodules] do
   install_rvm_binstubs
 
   # this has all the runcoms from this directory.
+  file_operation(Dir.glob('jshint/*')) if want_to_install?('jshint')
+  file_operation(Dir.glob('eslint/*')) if want_to_install?('eslint')
   file_operation(Dir.glob('git/*')) if want_to_install?('git configs (color, aliases)')
   file_operation(Dir.glob('irb/*')) if want_to_install?('irb/pry configs (more colorful)')
   file_operation(Dir.glob('ruby/*')) if want_to_install?('rubygems config (faster/no docs)')

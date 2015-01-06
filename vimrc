@@ -60,10 +60,19 @@ endif
 set autoindent
 set smartindent
 set smarttab
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
 set expandtab
+
+" ---Specific file types ---
+au! BufNewFile,BufRead *.feature setf cucumber
+au! BufRead,BufNewFile *.json setf json
+au! BufRead,BufNewFile *.mt setf jst
+autocmd FileType cucumber :setlocal sw=2 ts=2 sts=2
+autocmd FileType css :setlocal sw=2 ts=2 sts=2
+autocmd FileType scss :setlocal sw=2 ts=2 sts=2
+autocmd FileType jade :setlocal sw=2 ts=2 sts=2
 
 filetype plugin on
 filetype indent on
@@ -105,3 +114,45 @@ set sidescroll=1
 
 " ================ Custom Settings ========================
 so ~/.yadr/vim/settings.vim
+
+" JSON
+let g:vim_json_syntax_conceal = 0
+
+let g:UltiSnipsExpandTrigger="<tab>"
+
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_html_checkers=[]
+
+" Auto Save
+let g:auto_save = 1  " enable AutoSave on Vim startup
+let g:auto_save_no_updatetime = 1  " do not change the 'updatetime' option
+
+" EOL
+let g:PreserveNoEOL = 1
+
+" ======= Things to make everything play nicely ===========
+set undodir=~/Documents/VimUndo/
+
+" ================ Nerd Tree Settings =====================
+let NERDTreeShowHidden=1
+
+" NERDTree - hide .DS_Store files
+let NERDTreeIgnore=['\.DS_Store', '\.git$']
+
+let g:syntastic_quiet_messages = {}
+
+" ====================Tidy Configs==========================
+let g:syntastic_html_tidy_ignore_errors = [
+    \"trimming empty <i>",
+    \"trimming empty <span>",
+    \"trimming empty <button>",
+    \"<input> proprietary attribute \"autocomplete\"",
+    \"proprietary attribute \"role\"",
+    \"proprietary attribute \"hidden\"",
+    \"proprietary attribute \"max\"",
+    \"proprietary attribute \"min\"",
+    \"proprietary attribute \"type\"",
+\]
+
+"Debug syntastic
+"let g:syntastic_debug=3

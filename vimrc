@@ -121,7 +121,7 @@ let g:vim_json_syntax_conceal = 0
 let g:UltiSnipsExpandTrigger="<tab>"
 
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_html_checkers=[]
+let g:syntastic_html_checkers=['tidy']
 
 " Auto Save
 let g:auto_save = 1  " enable AutoSave on Vim startup
@@ -142,10 +142,12 @@ let NERDTreeIgnore=['\.DS_Store', '\.git$']
 let g:syntastic_quiet_messages = {}
 
 " ====================Tidy Configs==========================
+let g:syntastic_html_tidy_exec = "/usr/local/Cellar/tidy/HEAD/bin/tidy"
 let g:syntastic_html_tidy_ignore_errors = [
     \"trimming empty <i>",
     \"trimming empty <span>",
     \"trimming empty <button>",
+    \"trimming empty <label>",
     \"<input> proprietary attribute \"autocomplete\"",
     \"proprietary attribute \"role\"",
     \"proprietary attribute \"hidden\"",

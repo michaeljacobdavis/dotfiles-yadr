@@ -43,7 +43,7 @@ if !exists("g:yadr_disable_solarized_enhancements")
   hi! link jsParens jsParens
   hi! link jsNoise jsParens
 
-  hi! link NERDTreeFile Constant
+  hi! link NERDTreeFile Normal
   hi! link NERDTreeDir Identifier
 
   hi! link sassMixinName Function

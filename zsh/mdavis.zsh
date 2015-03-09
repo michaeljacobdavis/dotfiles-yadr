@@ -9,6 +9,9 @@ alias git-root='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show
 # Copy ssh key
 alias copy-ssh="pbcopy < ~/.ssh/id_rsa.pub"
 
+# Get what's running on port ...
+alias runningon="netstat -an | grep 8000"
+
 # Fix Node Version Manger
 source ~/.nvm/nvm.sh
 

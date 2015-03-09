@@ -121,8 +121,10 @@ let g:vim_json_syntax_conceal = 0
 let g:UltiSnipsExpandTrigger="<tab>"
 
 " Auto Save
-let g:auto_save = 1  " enable AutoSave on Vim startup
-let g:auto_save_no_updatetime = 1  " do not change the 'updatetime' option
+"let g:auto_save = 1  " enable AutoSave on Vim startup
+"let g:auto_save_no_updatetime = 1  " do not change the 'updatetime' option
+
+"set autoread
 
 " ======= Things to make everything play nicely ===========
 set undodir=~/Documents/VimUndo/

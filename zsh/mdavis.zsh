@@ -26,3 +26,7 @@ vs() {
 
 # Java Env
 eval "$(jenv init -)"
+
+# Rbenv
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/bin:$PATH"

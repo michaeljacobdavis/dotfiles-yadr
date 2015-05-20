@@ -73,6 +73,7 @@ autocmd FileType cucumber :setlocal sw=2 ts=2 sts=2
 autocmd FileType css :setlocal sw=2 ts=2 sts=2
 autocmd FileType scss :setlocal sw=2 ts=2 sts=2
 autocmd FileType jade :setlocal sw=2 ts=2 sts=2
+autocmd FileType json :setlocal sw=2 ts=2 sts=2
 
 filetype plugin on
 filetype indent on

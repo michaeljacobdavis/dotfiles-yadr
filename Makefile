@@ -8,3 +8,4 @@ install:
 	@npm install -g nvm
 	@npm install -g phantomjs
 	@npm install -g jshint
+	@brew install jenv

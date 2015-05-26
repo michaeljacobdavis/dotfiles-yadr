@@ -67,6 +67,7 @@
   standup = log --since yesterday --author='Mike Davis' --pretty=oneline --branches=* --decorate
   neuter = remote set-url --push upstream no_push
   sync = pull upstream
+  append = commit --amend --no-edit
 
   # rebase
   rc = rebase --continue            # continue rebase

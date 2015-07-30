@@ -11,3 +11,4 @@ install:
 	@npm install -g phantomjs
 	@npm install -g todo
 	@brew install jenv
+	@brew install shellcheck

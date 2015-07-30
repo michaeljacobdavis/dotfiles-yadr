@@ -33,4 +33,4 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 
 # Todo
 export TODO_DB_PATH=~/Dropbox/Apps/Todo/todo.json
-export TODO_FORMAT=pretty
+export TODO_FORMAT=simple

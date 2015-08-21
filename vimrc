@@ -49,7 +49,7 @@ set nowb
 " ================ Persistent Undo ==================
 " Keep undo history across sessions, by storing in file.
 " Only works all the time.
-if has('persistent_undo')
+if has('persistent_undo') && !isdirectory(expand('~').'/.vim/backups')
   silent !mkdir ~/.vim/backups > /dev/null 2>&1
   set undodir=~/.vim/backups
   set undofile
@@ -74,6 +74,10 @@ autocmd FileType css :setlocal sw=2 ts=2 sts=2
 autocmd FileType scss :setlocal sw=2 ts=2 sts=2
 autocmd FileType jade :setlocal sw=2 ts=2 sts=2
 autocmd FileType json :setlocal sw=2 ts=2 sts=2
+
+" Auto indent pasted text
+nnoremap p p=`]<C-o>
+nnoremap P P=`]<C-o>
 
 filetype plugin on
 filetype indent on

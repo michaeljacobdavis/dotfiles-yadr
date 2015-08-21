@@ -15,6 +15,10 @@ alias runningon="netstat -an | grep 8000"
 # Fix Node Version Manger
 source ~/.nvm/nvm.sh
 
+# Temporary class aliases
+alias bode='babel-node --optional strict --stage 1 -- '
+alias bodemon='nodemon --exec babel-node -- --optional strict --stage 1 -- '
+
 # Disable zsh autocorrect
 unsetopt correct_all
 
